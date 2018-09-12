@@ -1,0 +1,234 @@
+:root {
+  --first-color: #FFD700;
+  --second-color: #000000;
+  --text-color: #000000;
+}
+
+#night {
+  width: 100px;
+  height: 30px;
+  float: right;
+  margin: 5px;
+}
+
+#night > div {
+  width: 50%;
+  height: 40%;
+  margin: 0 auto 2px auto;
+  background-color: #5c5c5c;
+  border-radius: 10px;
+}
+
+#scroll {
+  width: 40%;
+  height: 75%;
+  margin: 0;
+  border-radius: 10px;
+  float: left;
+  background-color: white;
+}
+
+#night p {
+  font-size: 0.7em;
+  text-align: center;
+  background-color: #4b0082;
+  color: white;
+  width: 70%;
+  margin: 0 auto;
+}
+
+#statement {
+  text-align: center;
+  clear: both;
+  color: var(--text-color);
+  font-family: Tahoma;
+  letter-spacing: 1px;
+}
+
+#coding-interest {
+  background-color: blue;
+  color: white;
+  font-style: italic;
+}
+
+#self-pictures {
+  width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  border: 3px solid var(--first-color);
+  box-shadow: 2px 2px 1px var(--second-color),
+              4px 4px 1px var(--first-color);
+  /* display: flex; */
+  /* align-items: flex-end; */
+  /* justify-content: center; */
+}
+
+/* #self-pictures img {
+  outline: 1px solid brown;
+} */
+
+#minnesota {
+  border-top: 2px solid black;
+}
+
+#minnesota-pictures {
+  margin: 20px 0;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#minnesota p {
+  color: var(--second-color);
+  font-size: 20px;
+  text-shadow: 2px 2px 0 var(--first-color);
+  text-align: center;
+  letter-spacing: 10px;
+}
+
+#minnesota-pictures img {
+  /* display: inline; */
+  width: 150px;
+  height: 150px;
+}
+
+#self-pictures .top {
+  display: block;
+  /* flex: 1; */
+}
+
+#self-pictures .bottom {
+  float: left;
+  /* display: inline; */
+  /* flex: 1; */
+}
+
+.description {
+  display: block;
+  font-style: italic;
+}
+
+.main-photo {
+  width: 300px;
+  height: 300px;
+  float: left;
+  /* flex: 4; */
+}
+
+.side-photo {
+  width: 150px;
+  height: 150px;
+  /* flex: 1; */
+}
+
+#bottom-section p {
+  font-weight: bold;
+  /* padding-left: 10px; */
+  text-align: center;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  max-width: 125px;
+  margin: 10px;
+}
+
+#education, #organizations, #interests {
+  display: flex;
+  border-bottom: 2px solid black;
+}
+
+.left, .right {
+  flex: 1;
+}
+
+/* #bottom-section div {
+  clear: both;
+} */
+
+
+.info-pictures img {
+  width: 120px;
+  height: 120px;
+  margin: 20px;
+  display: block;
+}
+
+.info-pictures img:nth-of-type(even) {
+  float: right;
+}
+
+/* .left {
+  float: left;
+}
+
+.right {
+  float: right;
+} */
+
+
+li:hover {
+  background-color: green;
+  color: white;
+}
+
+html {
+  /* background-color: #00539F; */
+  background-image: url("../images/music-background.jpg");
+  /* background-image: url("../images/stars-background.jpg"); */
+  background-repeat: repeat;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding-top: 20px;
+  font-family: Century;
+  color: var(--text-color);
+  letter-spacing: 2px;
+}
+
+body {
+  background-color: #cdcdcd;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+
+div {
+  margin: 10px;
+  /* border: 2px solid white; */
+}
+
+/* img {
+  width: 40px;
+  height: 40px;
+  margin: 0px;
+  padding: 0px;
+} */
+
+button {
+  background-color: var(--first-color);
+  font-family: Georgia;
+  font-size: 20px;
+  box-shadow: 2px 2px 1px var(--second-color),
+              4px 4px 1px var(--first-color);
+  width: 200px;
+  height: 50px;
+}
+
+span:hover {
+  border: 2px solid black;
+}
+
+ul {
+  list-style-type: none;
+  line-height: 2;
+}
+
+li {
+  border-bottom: 2px dashed black;
+  color: var(--text-color);
+  visibility: hidden;
+}
