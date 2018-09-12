@@ -5,7 +5,8 @@ const sidePhotos = document.querySelectorAll(".side-photo");
 const divContent = document.querySelector("#bottom-section");
 const scroll = document.querySelector("#scroll");
 let placesShowing = false;
-const bottomTitles = document.querySelectorAll("#bottom-section p");
+const bottomTitles = document.querySelectorAll(".bottom-title");
+const detailInfo = document.querySelectorAll(".hide");
 
 
 // console.log(divContent);
@@ -46,6 +47,8 @@ scroll.onclick = () => {
 function switchPhotos(side) {
   // something here
   let main = document.querySelector(".main-photo");
+  // main.classList.add("switched");
+  // side.classList.add("switched");
   let mainSrc = main.getAttribute("src");
   let mainAlt = main.getAttribute("alt");
   let sideSrc = side.getAttribute("src");
@@ -65,10 +68,10 @@ function nightMode() {
 
   if (scroll.style.float === "left") {
     scroll.style.float = "right";
-    // how tf does this make sense?? (url address)
     document.querySelector(":root").style.cssText = `--text-color: ${nightTextColor}`;
     // document.querySelector(":root").style.cssText = `--first-color: ${nightShadeOne}`;
     // document.querySelector(":root").style.cssText = `--second-color: ${nightShadeTwo}`;
+    // how tf does this make sense?? (url address)
     document.querySelector("html").style.backgroundImage = "url('./images/stars-background.jpg')";
     document.querySelector("#night").lastElementChild.textContent = "Day Mode";
     document.querySelector("#night").lastElementChild.style.backgroundColor = "#cdcdcd";
@@ -99,7 +102,7 @@ function viewPlaces(div) {
     div.innerHTML = `
     <div id="education">
     <div class="info left">
-    <p>African and European Countries</p>
+    <p class="bottom-title">African and European Countries</p>
     <ul>
     <li>Senegal</li>
     <li>United Kingdom</li>
@@ -116,7 +119,7 @@ function viewPlaces(div) {
     <img src="./images/cancun.jpg">
     </div>
     <div class="info right">
-    <p>Spanish-Speaking Countries</p>
+    <p class="bottom-title">Spanish-Speaking Countries</p>
     <ul>
     <li>Puerto Rico</li>
     <li>Cancun</li>
@@ -125,7 +128,7 @@ function viewPlaces(div) {
     </div>
     <div id="interests">
     <div class="info left">
-    <p>U.S. Cities</p>
+    <p class="bottom-title">U.S. Cities</p>
     <ul>
     <li>San Francisco</li>
     <li>New York City</li>
@@ -144,7 +147,7 @@ function viewPlaces(div) {
     div.innerHTML = `
     <div id="education">
       <div class="info left">
-        <p>Education</p>
+        <p class="bottom-title">Education</p>
         <ul>
           <li><span>Emory University</span>: <span class="description">Business/Music Double Major</span></li>
           <li><span>Armstrong HS</span>: <span class="description">Graduated 3.68 with Honors</span></li>
@@ -165,7 +168,7 @@ function viewPlaces(div) {
         <img src="images/bbbs-logo.jpg" alt="Big Brothers Big Sisters logo">
       </div>
       <div class="info right">
-        <p>Organizations</p>
+        <p class="bottom-title">Organizations</p>
         <ul>
           <li><span>Alpha Phi Alpha Fraternity Inc.</span><span class="description">Active Member</span></li>
           <li><span>A2 Fitness.</span><span class="description">Co-Founder</span></li>
@@ -176,7 +179,7 @@ function viewPlaces(div) {
 
     <div id="interests">
       <div class="info left">
-        <p>Interests</p>
+        <p class="bottom-title">Interests</p>
         <ul>
           <li><span>Music</span></li>
           <li><span>Gym Enthusiast</span></li>
@@ -202,11 +205,16 @@ function viewPlaces(div) {
   }
 }
 
-sidePhotos.forEach(photo => photo.addEventListener("click", () => switchPhotos(photo)));
-bottomTitles.forEach(title => title.addEventListener("mouseover", () => {
+sidePhotos.forEach(photo => {
+  photo.addEventListener("click", () => switchPhotos(photo));
+  // photo.addEventListener("transitionend", removeSwitch);
+});
+
+detailInfo.forEach(title => title.addEventListener("mouseover", () => {
   let children = [...title.nextElementSibling.children];
   // console.log(children);
   children.forEach(el => el.style.visibility = "visible");
+  title.style.display = "none";
 }));
 
 button.addEventListener("click", () => viewPlaces(divContent));

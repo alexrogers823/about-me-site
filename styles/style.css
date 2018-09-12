@@ -109,6 +109,10 @@
   font-style: italic;
 }
 
+.switched {
+  opacity: 0.1;
+}
+
 .main-photo {
   width: 300px;
   height: 300px;
@@ -122,7 +126,7 @@
   /* flex: 1; */
 }
 
-#bottom-section p {
+.bottom-title {
   font-weight: bold;
   /* padding-left: 10px; */
   text-align: center;
@@ -145,6 +149,10 @@
 /* #bottom-section div {
   clear: both;
 } */
+
+.hide {
+  text-transform: uppercase;
+}
 
 
 .info-pictures img {
@@ -216,6 +224,11 @@ button {
               4px 4px 1px var(--first-color);
   width: 200px;
   height: 50px;
+  transition: width 0.5s;
+}
+
+button:hover {
+  width: 300px;
 }
 
 span:hover {
