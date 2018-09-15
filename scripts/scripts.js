@@ -7,6 +7,7 @@ const scroll = document.querySelector("#scroll");
 let placesShowing = false;
 const bottomTitles = document.querySelectorAll(".bottom-title");
 const detailInfo = document.querySelectorAll(".hide");
+const wordInput = [];
 
 
 // console.log(divContent);
@@ -109,14 +110,14 @@ function viewPlaces(div) {
     </ul>
     </div>
     <div class="info-pictures right">
-    <img src="./images/senegal-picture.jpg">
-    <img src="./images/england.jpg">
+    <img src="images/senegal-picture.jpg">
+    <img src="images/england.jpg">
     </div>
     </div>
     <div id="organizations">
     <div class="info-pictures left">
-    <img src="./images/puerto-rico.jpg">
-    <img src="./images/cancun.jpg">
+    <img src="images/puerto-rico.jpg">
+    <img src="images/cancun.jpg">
     </div>
     <div class="info right">
     <p class="bottom-title">Spanish-Speaking Countries</p>
@@ -135,8 +136,8 @@ function viewPlaces(div) {
     </ul>
     </div>
     <div class="info-pictures right">
-    <img src="./images/san_francisco.jpg">
-    <img src="./images/times_square.jpg">
+    <img src="images/san_francisco.jpg">
+    <img src="images/times_square.jpg">
     </div>
     </div>
     `
@@ -218,3 +219,17 @@ detailInfo.forEach(title => title.addEventListener("mouseover", () => {
 }));
 
 button.addEventListener("click", () => viewPlaces(divContent));
+window.addEventListener("keyup", e => {
+  wordInput.push(e.key);
+  wordInput.splice(-7, wordInput.length-6);
+  console.log(wordInput);
+  if (wordInput.join('').includes('night')) {
+    nightMode();
+    wordInput.pop();
+    console.log(wordInput);
+  }
+  if (wordInput.join('').includes('places')) {
+    viewPlaces(divContent);
+  }
+
+})
