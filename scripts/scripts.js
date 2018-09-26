@@ -19,7 +19,7 @@ const travelPictures = [
   ["Cancun", "picture"],
   ["San Francisco", "picture"],
   ["New York City", "picture"]
-]
+];
 
 const fontSizeMultiplier = 0.75;
 
@@ -140,7 +140,7 @@ function viewPlaces(div) {
     <img src="images/times_square.jpg">
     </div>
     </div>
-    `
+    `;
     facts = [...document.querySelectorAll("li")];
     // console.log(facts);
     facts.forEach(fact => fact.style.visibility = "visible");
@@ -196,7 +196,7 @@ function viewPlaces(div) {
         <img src="images/bowling-original.jpg" alt="bowling picture">
       </div>
     </div>
-    `
+    `;
     facts = [...document.querySelectorAll("li")];
     // console.log(facts);
     facts.forEach(fact => fact.style.visibility = "visible");
